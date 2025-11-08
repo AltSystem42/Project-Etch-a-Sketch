@@ -24,16 +24,10 @@ function buildGrid(boxCount) {
   container.appendChild(fragment)
 }
 
-//reset the grid and put in existing gridSize
-function resetGrid(currentBoxCount){
-    buildGrid(currentBoxCount)
-}
-
 //button to choose what size of grid you want
 changeGridSize.addEventListener('click', () => {
     
     gridSize = parseInt(prompt('Size of new grid'))
-    console.log(gridSize)
     if (gridSize > 100 || isNaN(gridSize)){
         alert("Error too big")
     } else {
