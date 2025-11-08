@@ -5,7 +5,10 @@
     padding: 10px;
     max-width: 1px;
 }
-body{
+.container{
     display:flex;
     justify-content: center;
+}
+.column {
+    display:block;
 }
