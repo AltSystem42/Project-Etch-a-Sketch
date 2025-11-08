@@ -1,14 +1,21 @@
 .box{
     display:flex;
-    border: 2px solid black;
-    margin: 1px;
-    padding: 10px;
+    border: 0px solid black;
+    margin: 0px;
+    padding: 1px;
     max-width: 1px;
 }
 .container{
     display:flex;
-    justify-content: center;
+    border: 1px solid black;
+    
 }
 .column {
     display:block;
+}
+body{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
