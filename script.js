@@ -1,8 +1,13 @@
 const container = document.querySelector('.container')
 const changeGridSize = document.querySelector(`.changegridsize`)
 const reset = document.querySelector(".reset")
+const rainbowButton = document.querySelector(".rainbow")
+
+
 container.style.maxWidth = "400px"
 let gridSize = 100
+let rainbow = false;
+let opacity = 0;
 buildGrid(gridSize)
 
 function buildGrid(boxCount) {
@@ -36,6 +41,14 @@ changeGridSize.addEventListener('click', () => {
     buildGrid(gridSize)
     }
 })
+//make a listening event for rainbow button
+rainbowButton.addEventListener('click', () => {
+    if (rainbow === false){
+        rainbow = true
+    }   else {
+        rainbow = false
+    }
+})
 
 //reset event listener button
 reset.addEventListener('click', () => {
@@ -52,5 +65,27 @@ container.addEventListener('mouseover', (e) => {
 
 //  change background color of a box
 function changeBackGround(boxElement) {
-    boxElement.style.backgroundColor = "black" 
+    if(rainbow === true)
+    {
+        boxElement.style.backgroundColor = `rgb(${getRandomColorNumber()}, ${getRandomColorNumber()}, ${getRandomColorNumber()})`
+        boxElement.style.opacity = getOpacityCounter() + "%";
+    } else {
+        boxElement.style.backgroundColor = `black`
+        boxElement.style.opacity = "100%"
+    }
+}
+// change the opacity counter
+function getOpacityCounter() {
+    if(opacity == 100){
+        opacity = 0
+        return 0
+    } else {
+        opacity += 10
+        return opacity;
+    }
+    
+}
+//get randomnumber from 0 to 255
+function getRandomColorNumber() {
+    return  Math.floor(Math.random() * (255 - 0 + 1))
 }
