@@ -1,2 +1,2 @@
 # Project-Etch-a-Sketch
-Project: Etch-a-Sketch
+My Odin Project: Etch-a-Sketch
